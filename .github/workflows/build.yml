@@ -14,10 +14,10 @@ jobs:
       matrix:
         config:
           - name: Android32
-            os: ubuntu-22.04
+            os: ubuntu-latest
             target: Android32
           - name: Android64
-            os: ubuntu-22.04
+            os: ubuntu-latest
             target: Android64
           - name: Windows
             os: windows-latest
@@ -27,13 +27,11 @@ jobs:
     runs-on: ${{ matrix.config.os }}
 
     steps:
-      - class: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - class: geode-sdk/build-geode-mod@main
+      - uses: geode-sdk/build-geode-mod@main
         with:
-          bindings: 'hax45-dev/geode-bindings' # Sesuaikan jika perlu
           target: ${{ matrix.config.target }}
-          combine: true
 
   package:
     name: Package Release
@@ -41,11 +39,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - class: geode-sdk/build-geode-mod/combine@main
-        with:
-          id: hax25dev.peak_macro
+      - uses: geode-sdk/build-geode-mod/combine@main
 
-      - class: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: PeakMacro-Release
-          path: '*.geode'
+          path: build/*.geode
