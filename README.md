@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/Hax45-dev/PeakMacro/refs/heads/main/resources/Peak_logo.png" alt="PeakMacro Logo" width="160">
+
 # ⛰️ PeakMacro
 
 **Frame-perfect macro recorder & player for Geometry Dash**  
@@ -69,7 +71,7 @@ You can also access everything from the **Pause Menu → PeakMacro** button.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Hax25-dev/PeakMacro.git
+git clone [https://github.com/Hax25-dev/PeakMacro.git](https://github.com/Hax25-dev/PeakMacro.git)
 cd PeakMacro
 
 # 2. Set the Geode SDK environment variable
@@ -83,72 +85,3 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release
 
 # 4. Build
 cmake --build build --config Release
-```
-
-The compiled `.geode` file will be in `build/`.
-
----
-
-## 📁 File Format
-
-PeakMacro saves macros as `.peak` files (JSON-based):
-
-```json
-{
-  "name": "MyMacro",
-  "levelName": "Stereo Madness",
-  "author": "Hax25-dev",
-  "createdAt": "2024-01-15_10-30-00",
-  "fps": 60,
-  "totalFrames": 3240,
-  "frames": [
-    { "frame": 12, "p1": true, "p2": false, "hold1": true, "hold2": false, "x": 120.5, "y": 205.3 }
-  ]
-}
-```
-
-Macro files are stored in:  
-`%LOCALAPPDATA%\GeometryDash\geode\mods\hax25dev.peak_macro\macros\`
-
----
-
-## ⚙️ Settings
-
-| Setting | Default | Description |
-|---|---|---|
-| Show Overlay | ✅ On | Display HUD during recording/playback |
-| Overlay Opacity | 0.8 | Transparency of the HUD |
-| Auto Save Macro | ✅ On | Automatically save when recording stops |
-| FPS Bypass | ❌ Off | Enable high-FPS mode during playback |
-
----
-
-## 🗺️ Roadmap
-
-- [ ] Frame advance / step-by-step playback  
-- [ ] Macro editor (trim, merge, splice)  
-- [ ] Speed multiplier during playback  
-- [ ] Export to video  
-- [ ] Cloud sync  
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see [LICENSE](LICENSE) for details.
-
----
-
-## 🙏 Credits
-
-| | |
-|---|---|
-| **Author** | [@Hax25-dev](https://github.com/Hax25-dev) |
-| **Framework** | [Geode SDK](https://geode-sdk.org) by the Geode Team |
-| **Game** | Geometry Dash by RobTop Games |
-
----
-
-<div align="center">
-Made with ❤️ by <b>@Hax25-dev</b>
-</div>
